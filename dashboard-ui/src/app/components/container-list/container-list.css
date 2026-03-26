@@ -1,0 +1,101 @@
+.docker-panel {
+    margin-top: 2rem;
+    background-color: #141414;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.panel-header h2 {
+    color: #888;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.jdm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.jdm-table th {
+    text-align: left;
+    color: #ff003c;
+    padding-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.jdm-table td {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #222;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #555;
+    /* Apagado por defecto */
+}
+
+.status-dot.running {
+    background-color: #00ff00;
+    box-shadow: 0 0 8px #00ff00;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #fff;
+}
+
+.dim {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.empty-state {
+    text-align: center;
+    color: #555;
+    font-style: italic;
+    padding: 2rem 0;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-action {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.btn-action:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #333;
+}
+
+.btn-action.start:not(:disabled):hover {
+    border-color: #00ff00;
+    color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.btn-action.stop:not(:disabled):hover {
+    border-color: #ff003c;
+    color: #ff003c;
+    box-shadow: 0 0 10px rgba(255, 0, 60, 0.3);
+}

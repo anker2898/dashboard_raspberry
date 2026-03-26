@@ -1,0 +1,32 @@
+<div class="jdm-dashboard">
+    <header class="dash-header">
+        <h1>KAIDO // <span>SYS_MONITOR</span></h1>
+        <div class="status-indicator">
+            <div class="led-green"></div>
+            <span>SYS. ONLINE</span>
+        </div>
+    </header>
+
+    <main class="gauges-grid">
+        <div class="gauge-card">
+            <h2 class="gauge-title">CPU LOAD</h2>
+            <div class="gauge-value">
+                {{ hardwareService.metrics().cpuPercentage }}<span class="unit">%</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill bg-red" [style.width.%]="hardwareService.metrics().cpuPercentage"></div>
+            </div>
+        </div>
+
+        <div class="gauge-card">
+            <h2 class="gauge-title">CORE TEMP</h2>
+            <div class="gauge-value">
+                {{ hardwareService.metrics().temperatureCelsius }}<span class="unit">°C</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill bg-white" [style.width.%]="hardwareService.metrics().temperatureCelsius"></div>
+            </div>
+        </div>
+    </main>
+    <app-container-list></app-container-list>
+</div>

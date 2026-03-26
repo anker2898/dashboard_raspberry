@@ -1,0 +1,39 @@
+<div class="docker-panel">
+    <div class="panel-header">
+        <h2>// SISTEMAS_DOCKER</h2>
+    </div>
+
+    <table class="jdm-table">
+        <thead>
+            <tr>
+                <th>SYS</th>
+                <th>NOMBRE</th>
+                <th>IMAGEN</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (container of dockerService.containers(); track container.id) {
+            <tr>
+                <td>
+                    <div class="status-dot" [class.running]="container.state === 'running'"></div>
+                </td>
+                <td class="highlight">{{ container.name }}</td>
+                <td class="dim">{{ container.image }}</td>
+                <td>{{ container.status }}</td>
+                <td class="actions-cell">
+                    <button class="btn-action start" (click)="dockerService.startContainer(container.id)"
+                        [disabled]="container.state === 'running'">
+                        IGNITION
+                    </button>
+                    <button class="btn-action stop" (click)="dockerService.stopContainer(container.id)"
+                        [disabled]="container.state !== 'running'">
+                        KILL
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

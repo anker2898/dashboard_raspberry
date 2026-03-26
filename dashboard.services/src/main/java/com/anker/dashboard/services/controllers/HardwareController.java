@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/hardware")
-@CrossOrigin(origins = "http://localhost:4200")
 public class HardwareController {
     @Autowired  private HardwareMonitorService monitorService;
 
